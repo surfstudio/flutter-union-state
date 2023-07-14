@@ -1,6 +1,7 @@
+/// This library is for working with the presentation layer
+library union_state;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'package:union_state/src/core/union_state.dart';
+export 'package:union_state/src/core/union_state_listenable_builder.dart';
+export 'package:union_state/src/core/union_state_notifier.dart';
+export 'package:union_state/src/entity/entity.dart';
