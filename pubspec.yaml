@@ -5,7 +5,7 @@ homepage: https://github.com/surfstudio/flutter-union-state
 
 environment:
   sdk: '>=3.0.5 <4.0.0'
-  flutter: ">=1.17.0"
+  flutter: ">=3.0.0"
 
 dependencies:
   elementary: 2.0.0
