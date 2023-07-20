@@ -21,7 +21,8 @@ abstract interface class ICountryListWM implements IWidgetModel {
 }
 
 /// Widget Model for [CountryListScreen]
-class CountryListScreenWm extends WidgetModel<CountryListScreen, ICountryListScreenModel>
+class CountryListScreenWm
+    extends WidgetModel<CountryListScreen, ICountryListScreenModel>
     implements ICountryListWM {
   final ThemeWrapper _themeWrapper;
 
@@ -45,7 +46,11 @@ class CountryListScreenWm extends WidgetModel<CountryListScreen, ICountryListScr
   void initWidgetModel() {
     super.initWidgetModel();
 
-    _countryNameStyle = _themeWrapper.getTextTheme(context).headlineMedium ?? AppTypography.title3;
+    _countryNameStyle = (_themeWrapper.getTextTheme(context).headlineMedium ??
+            AppTypography.title3)
+        .copyWith(
+      color: Colors.black,
+    );
   }
 
   @override

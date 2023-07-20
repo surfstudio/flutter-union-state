@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:elementary/elementary.dart';
 import 'package:example/features/countries/entity/country_entity.dart';
 import 'package:example/features/countries/presentation/screens/country_list_screen/country_list_screen_wm.dart';
@@ -19,15 +21,17 @@ class CountryListScreen extends ElementaryWidget<ICountryListWM> {
         title: const Text('Country list'),
       ),
       body: UnionStateListenableBuilder<Iterable<CountryEntity>>(
-        unionStateListenable: wm.countryListState,
-        loadingBuilder: (_, __) => const _LoadingWidget(),
-        builder: (_, countries) => _CountryList(
-          countries: countries,
-          nameStyle: wm.countryNameStyle,
-          onRefresh: wm.onRefresh,
-        ),
-        failureBuilder: (_, failure, __) => const _ErrorWidget(),
-      ),
+          unionStateListenable: wm.countryListState,
+          loadingBuilder: (_, __) => const _LoadingWidget(),
+          builder: (_, countries) => _CountryList(
+                countries: countries,
+                nameStyle: wm.countryNameStyle,
+                onRefresh: wm.onRefresh,
+              ),
+          failureBuilder: (_, failure, __) {
+            log('failure: $failure');
+            return const _ErrorWidget();
+          }),
     );
   }
 }

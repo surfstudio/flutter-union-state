@@ -1,8 +1,10 @@
 // ignore_for_file: public_member_api_docs
 
+import 'dart:io';
 import 'dart:ui';
 
 import 'package:dio/dio.dart';
+import 'package:dio/io.dart';
 import 'package:elementary/elementary.dart';
 import 'package:example/features/common/error_handler/error_handler_debug.dart';
 import 'package:example/utils/error/log_writer/log_writer.dart';
@@ -72,6 +74,8 @@ class AppScope implements IAppScope {
       ..receiveTimeout = timeout
       ..sendTimeout = timeout;
 
+    (dio.httpClientAdapter as IOHttpClientAdapter).createHttpClient =
+        () => HttpClient()..badCertificateCallback = ((_, __, ___) => true);
     return dio;
   }
 }
