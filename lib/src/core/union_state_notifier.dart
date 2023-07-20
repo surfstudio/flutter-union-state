@@ -9,23 +9,23 @@ import 'package:union_state/src/entity/failure/failure.dart';
 /// * Explicitly guarantees only 3 states: loading, content, failure.
 class UnionStateNotifier<T> extends ValueNotifier<UnionState<T>> {
   /// Создает UnionStateNotifier
-  UnionStateNotifier(T initialData) : super(UnionState<T>.content(initialData));
+  UnionStateNotifier(T initialData) : super(UnionStateContent<T>(initialData));
 
   /// Creates UnionStateNotifier.loading
-  UnionStateNotifier.loading([T? data]) : super(UnionState<T>.loading(data));
+  UnionStateNotifier.loading([T? data]) : super(UnionStateLoading<T>(data));
 
   /// Creates UnionStateNotifier.failure
   UnionStateNotifier.failure([Failure? failure, T? data])
-      : super(UnionState<T>.failure(failure, data));
+      : super(UnionStateFailure<T>(failure, data));
 
   /// Accept state with content.
-  void content(T data) => super.value = UnionState<T>.content(data);
+  void content(T data) => super.value = UnionStateContent<T>(data);
 
   /// Accept state with failure.
   void failure([Failure? failure, T? data]) =>
-      super.value = UnionState<T>.failure(failure, data);
+      super.value = UnionStateFailure<T>(failure, data);
 
   /// Accept loading state.
   void loading([T? previousData]) =>
-      super.value = UnionState<T>.loading(previousData);
+      super.value = UnionStateLoading<T>(previousData);
 }

@@ -31,19 +31,14 @@ class UnionStateListenableBuilder<T> extends StatelessWidget {
     return ValueListenableBuilder<UnionState<T>>(
       valueListenable: unionStateListenable,
       builder: (context, state, _) {
-        if (state is UnionStateFailure<T>) {
-          return failureBuilder(context, state.failure, state.data);
+        switch (state) {
+          case UnionStateContent(data: final data):
+            return builder(context, data);
+          case UnionStateLoading(data: final data):
+            return loadingBuilder(context, data);
+          case UnionStateFailure(data: final data, failure: final failure):
+            return failureBuilder(context, failure, data);
         }
-
-        if (state is UnionStateLoading<T>) {
-          return loadingBuilder(context, state.data);
-        }
-
-        if (state is UnionStateContent<T>) {
-          return builder(context, state.data);
-        }
-
-        throw StateError('Wrong state type of $state');
       },
     );
   }
