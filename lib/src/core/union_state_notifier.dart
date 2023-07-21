@@ -8,7 +8,7 @@ import 'package:union_state/src/entity/failure/failure.dart';
 /// * Guarantees a non-zero result [T].
 /// * Explicitly guarantees only 3 states: loading, content, failure.
 class UnionStateNotifier<T> extends ValueNotifier<UnionState<T>> {
-  /// Создает UnionStateNotifier
+  /// Instantiate [UnionStateNotifier].
   UnionStateNotifier(T initialData) : super(UnionStateContent<T>(initialData));
 
   /// Creates UnionStateNotifier.loading
