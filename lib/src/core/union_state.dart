@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:union_state/union_state.dart';
 
 /// A universal model for mapping basic UI states.
@@ -10,26 +11,63 @@ sealed class UnionState<T> {
 }
 
 /// Content Availability State.
+@immutable
 class UnionStateContent<T> implements UnionState<T> {
   @override
   final T data;
 
-  UnionStateContent(this.data);
+  @override
+  int get hashCode => data.hashCode;
+
+  const UnionStateContent(this.data);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UnionStateContent<T> &&
+            identical(other.data, data));
+  }
 }
 
 /// Loading status.
+@immutable
 class UnionStateLoading<T> implements UnionState<T> {
   @override
   final T? data;
 
-  UnionStateLoading([this.data]);
+  @override
+  int get hashCode => data.hashCode;
+
+  const UnionStateLoading([this.data]);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UnionStateLoading<T> &&
+            identical(other.data, data));
+  }
 }
 
 /// Error Status.
+@immutable
 class UnionStateFailure<T> implements UnionState<T> {
   @override
   final T? data;
   final Failure? failure;
 
-  UnionStateFailure([this.failure, this.data]);
+  @override
+  int get hashCode => data.hashCode ^ failure.hashCode;
+
+  const UnionStateFailure([this.failure, this.data]);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UnionStateFailure<T> &&
+            identical(other.data, data) &&
+            identical(other.failure, failure));
+  }
 }
