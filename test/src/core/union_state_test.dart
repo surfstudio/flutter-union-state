@@ -4,7 +4,7 @@ import 'package:union_state/union_state.dart';
 
 class MockData {}
 
-class MockFailure extends Mock implements Failure {}
+class MockException extends Mock implements Exception {}
 
 void main() {
   group('UnionState', () {
@@ -27,10 +27,10 @@ void main() {
     group('UnionStateFailure: ', () {
       test('should return data and failure', () {
         final data = MockData();
-        final failure = MockFailure();
-        final state = UnionStateFailure<MockData>(failure, data);
+        final exception = MockException();
+        final state = UnionStateFailure<MockData>(exception, data);
         expect(state.data, equals(data));
-        expect(state.failure, equals(failure));
+        expect(state.exception, equals(exception));
       });
     });
   });

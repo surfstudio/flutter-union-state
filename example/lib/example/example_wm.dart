@@ -22,7 +22,7 @@ class ExampleWM extends WidgetModel<ExampleScreen, ExampleModel>
   ValueListenable<UnionState<String>> get dataState => model.dataState;
 
   //@nodoc.
-  ExampleWM(ExampleModel model) : super(model);
+  ExampleWM(super._model);
 
   @override
   void initWidgetModel() {

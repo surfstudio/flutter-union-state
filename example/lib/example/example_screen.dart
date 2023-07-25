@@ -39,11 +39,11 @@ class ExampleScreen extends ElementaryWidget<IExampleWM> {
             ],
           ),
         ),
-        failureBuilder: (_, failure, lastData) => Center(
+        failureBuilder: (_, exception, lastData) => Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(failure?.message ?? 'Unexpected error'),
+              Text(exception.toString()),
               if (lastData != null) ...[
                 const SizedBox(height: 10),
                 Text('Last data: $lastData'),

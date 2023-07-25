@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:union_state/src/core/union_state.dart';
-import 'package:union_state/src/entity/failure/failure.dart';
 
 /// Presentation part builder for [ValueListenable] and [UnionState].
 class UnionStateListenableBuilder<T> extends StatelessWidget {
@@ -36,8 +35,8 @@ class UnionStateListenableBuilder<T> extends StatelessWidget {
             return builder(context, data);
           case UnionStateLoading(data: final data):
             return loadingBuilder(context, data);
-          case UnionStateFailure(data: final data, failure: final failure):
-            return failureBuilder(context, failure, data);
+          case UnionStateFailure(data: final data, exception: final exception):
+            return failureBuilder(context, exception, data);
         }
       },
     );
@@ -56,6 +55,6 @@ typedef DataWidgetBuilder<T> = Widget Function(BuildContext context, T data);
 /// Builder function for the [UnionStateFailure] state.
 typedef FailureWidgetBuilder<T> = Widget Function(
   BuildContext context,
-  Failure? e,
+  Exception? e,
   T? data,
 );

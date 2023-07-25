@@ -5,7 +5,7 @@ import 'package:union_state/union_state.dart';
 
 class MockData {}
 
-class MockFailure extends Mock implements Failure {}
+class MockException extends Mock implements Exception {}
 
 void main() {
   Widget wrapper(Widget child) => Directionality(
@@ -62,10 +62,10 @@ void main() {
 
     testWidgets('should call failureBuilder when state is failure',
         (tester) async {
-      final failure = MockFailure();
+      final exception = MockException();
       final data = MockData();
       final unionStateListenable = ValueNotifier<UnionState<MockData>>(
-        UnionStateFailure<MockData>(failure, data),
+        UnionStateFailure<MockData>(exception, data),
       );
 
       const failureData = 'failure';

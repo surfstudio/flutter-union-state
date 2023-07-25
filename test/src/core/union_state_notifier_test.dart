@@ -4,7 +4,7 @@ import 'package:union_state/union_state.dart';
 
 class MockData {}
 
-class MockFailure extends Mock implements Failure {}
+class MockException extends Mock implements Exception {}
 
 void main() {
   group('Initialization: ', () {
@@ -23,7 +23,7 @@ void main() {
       final notifier = UnionStateNotifier<MockData>.loading();
       expect(
         notifier.value,
-        equals(UnionStateLoading<MockData>()),
+        equals(const UnionStateLoading<MockData>()),
       );
     });
 
@@ -39,7 +39,7 @@ void main() {
 
   group('UnionStateNotifier.failure: ', () {
     test('should set state to failure', () {
-      final failure = MockFailure();
+      final failure = MockException();
       final notifier = UnionStateNotifier<MockData>.failure(failure);
       expect(
         notifier.value,
@@ -49,7 +49,7 @@ void main() {
 
     test('should set state to failure with previous data', () {
       final data = MockData();
-      final failure = MockFailure();
+      final failure = MockException();
       final notifier = UnionStateNotifier<MockData>.failure(failure, data);
       expect(
         notifier.value,

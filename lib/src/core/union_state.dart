@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:union_state/union_state.dart';
 
 /// A universal model for mapping basic UI states.
 ///
@@ -55,12 +54,12 @@ class UnionStateLoading<T> implements UnionState<T> {
 class UnionStateFailure<T> implements UnionState<T> {
   @override
   final T? data;
-  final Failure? failure;
+  final Exception? exception;
 
   @override
-  int get hashCode => data.hashCode ^ failure.hashCode;
+  int get hashCode => data.hashCode ^ exception.hashCode;
 
-  const UnionStateFailure([this.failure, this.data]);
+  const UnionStateFailure([this.exception, this.data]);
 
   @override
   bool operator ==(Object other) {
@@ -68,6 +67,6 @@ class UnionStateFailure<T> implements UnionState<T> {
         (other.runtimeType == runtimeType &&
             other is UnionStateFailure<T> &&
             identical(other.data, data) &&
-            identical(other.failure, failure));
+            identical(other.exception, exception));
   }
 }
