@@ -5,12 +5,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:union_state/union_state.dart';
 
+/// Interface [IWidgetModel] for the example screen [ExampleScreen]
 abstract class IExampleWM extends IWidgetModel {
   ValueListenable<UnionState<String>> get dataState;
 
   void refreshData();
 }
 
+/// Factory to create an instance of [ExampleWM]
 ExampleWM defaultExampleWidgetModelFactory(BuildContext context) {
   return ExampleWM(ExampleModel());
 }
@@ -21,7 +23,7 @@ class ExampleWM extends WidgetModel<ExampleScreen, ExampleModel>
   @override
   ValueListenable<UnionState<String>> get dataState => model.dataState;
 
-  //@nodoc.
+  /// Creates a [ExampleWM].
   ExampleWM(super._model);
 
   @override
