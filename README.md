@@ -50,34 +50,40 @@ Presentation part builder for [ValueListenable] and [UnionState].
 
 ```dart
 // ......
-body: UnionStateListenableBuilder<String>(
-        unionStateListenable: wm.dataState,
-        builder: (_, data) => Center(child: Text(data)),
-        loadingBuilder: (_, lastData) => Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const CircularProgressIndicator(),
-              if (lastData != null) ...[
-                const SizedBox(height: 10),
-                Text('Last data: $lastData'),
-              ],
+@override
+Widget build(IExampleWM wm) {
+  return Scaffold(
+    appBar: AppBar(),
+    body: UnionStateListenableBuilder<String>(
+      unionStateListenable: wm.dataState,
+      builder: (_, data) => Center(child: Text(data)),
+      loadingBuilder: (_, lastData) => Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const CircularProgressIndicator(),
+            if (lastData != null) ...[
+              const SizedBox(height: 10),
+              Text('Last data: $lastData'),
             ],
-          ),
-        ),
-        failureBuilder: (_, exception, lastData) => Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(exception.toString()),
-              if (lastData != null) ...[
-                const SizedBox(height: 10),
-                Text('Last data: $lastData'),
-              ],
-            ],
-          ),
+          ],
         ),
       ),
+      failureBuilder: (_, exception, lastData) => Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(exception.toString()),
+            if (lastData != null) ...[
+              const SizedBox(height: 10),
+              Text('Last data: $lastData'),
+            ],
+          ],
+        ),
+      ),
+    ),
+  );
+}
 // ......
 ```
 
