@@ -16,7 +16,10 @@ class UnionStateListenableBuilder<T> extends StatelessWidget {
   /// Builder describing the interface when [UnionStateFailure] arrives.
   final FailureWidgetBuilder<T> failureBuilder;
 
-  /// @nodoc
+  /// Creates a [UnionStateListenableBuilder].
+  ///
+  /// The [unionStateListenable], [builder], [loadingBuilder] and [failureBuilder] arguments
+  /// must not be null.
   const UnionStateListenableBuilder({
     required this.unionStateListenable,
     required this.builder,
