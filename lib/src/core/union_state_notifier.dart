@@ -1,9 +1,7 @@
-// ignore_for_file: comment_references
-
 import 'package:flutter/foundation.dart';
 import 'package:union_state/src/core/union_state.dart';
 
-/// Internal replacement for [EntityStateNotifier]. Unlike [EntityState]:
+/// Internal replacement for EntityStateNotifier from Elementary. Unlike [EntityState]:
 /// * Guarantees a non-zero result [T].
 /// * Explicitly guarantees only 3 states: loading, content, failure.
 class UnionStateNotifier<T> extends ValueNotifier<UnionState<T>> {
