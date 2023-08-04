@@ -115,3 +115,38 @@ class ExampleModel extends ElementaryModel {
 ### Implementation examples
 
 [An example](https://github.com/surfstudio/flutter-union-state/tree/main/example)
+
+## Installation
+
+Add `union_state` to your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  union_state: $currentVersion$
+```
+
+<p>At this moment, the current version of <code>union_state</code> is <a href="https://pub.dev/packages/union_state"><img style="vertical-align:middle;" src="https://img.shields.io/pub/v/union_state.svg" alt="union_state version"></a>.</p>
+
+## Changelog
+
+All notable changes to this project will be documented in [this file](./CHANGELOG.md).
+
+## Issues
+
+To report your issues,  submit them directly in the [Issues](https://github.com/surfstudio/flutter-union-state/issues) section.
+
+## Contribute
+
+If you would like to contribute to the package (e.g. by improving the documentation, fixing a bug or adding a cool new feature), please read our [contribution guide](./CONTRIBUTING.md) first and send us your pull request.
+
+Your PRs are always welcome.
+
+## How to reach us
+
+Please feel free to ask any questions about this package. Join our community chat on Telegram. We speak English and Russian.
+
+[![Telegram](https://img.shields.io/badge/chat-on%20Telegram-blue.svg)](https://t.me/SurfGear)
+
+## License
+
+[Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
