@@ -10,7 +10,8 @@ This package is part of the [SurfGear](https://github.com/surfstudio/SurfGear) t
 
 ## Target
 
-Replace EntityState from Elementary
+A simple union with three states (loading, data, and error) based on sealed classes and ChangeNotifier. 
+Used for delivering data to the UI layer, for example, using the Elementary library.
 
 ## Description
 
@@ -19,7 +20,7 @@ The package includes the following classes:
 ### UnionState
 A universal model for mapping basic UI states.
 
-Internal replacement for [EntityState]. Unlike [EntityState]:
+Can be used as internal replacement for [EntityState]. Unlike [EntityState]:
  * Guarantees a non-zero result [T].
  * Explicitly guarantees only 3 states: loading, content, error.
 
@@ -47,6 +48,8 @@ final _countryListState = UnionStateNotifier<Iterable<Country>>.loading();
 ### UnionStateListenableBuilder
 
 Presentation part builder for [ValueListenable] and [UnionState].
+
+Note that a non-zero result [T] is only guaranteed for UnionStateContent. But not for load and fail.
 
 ```dart
 // ......
@@ -89,7 +92,14 @@ Widget build(IExampleWM wm) {
 
 ### UnionStateNotifier
 
-Internal replacement for [EntityStateNotifier]. Unlike [EntityState]:
+A custom [ValueNotifier] that encapsulates the state of a union type. It provides methods
+ to manage different states of data:
+
+- [content]: Represents a state with successful content.
+- [failure]: Represents a state with an error and, optionally, previous data.
+- [loading]: Represents a state indicating that data is being loaded.
+
+Can be used as internal replacement for [EntityStateNotifier]. Unlike [EntityState]:
  * Guarantees a non-zero result [T].
  * Explicitly guarantees only 3 states: loading, content, failure.
 
