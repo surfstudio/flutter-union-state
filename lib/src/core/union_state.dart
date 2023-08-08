@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-/// A universal model for mapping basic UI states.
+/// An universal model for mapping basic UI states.
 ///
-/// Internal replacement for [EntityState]. Unlike [EntityState]:
 /// * Guarantees a non-zero result [T].
 /// * Explicitly guarantees only 3 states: loading, content, error.
 sealed class UnionState<T> {
@@ -18,6 +17,7 @@ class UnionStateContent<T> implements UnionState<T> {
   @override
   int get hashCode => data.hashCode;
 
+  /// Creates [UnionStateContent] with the specified [data].
   const UnionStateContent(this.data);
 
   @override
@@ -38,6 +38,7 @@ class UnionStateLoading<T> implements UnionState<T> {
   @override
   int get hashCode => data.hashCode;
 
+  /// Creates [UnionStateLoading] with optional [data].
   const UnionStateLoading([this.data]);
 
   @override
@@ -59,6 +60,7 @@ class UnionStateFailure<T> implements UnionState<T> {
   @override
   int get hashCode => data.hashCode ^ exception.hashCode;
 
+  /// Creates [UnionStateFailure] with optional [exception] and [data].
   const UnionStateFailure([this.exception, this.data]);
 
   @override
