@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// An universal model for mapping basic UI states.
 ///
-/// * Guarantees a non-zero result [T].
+/// * Guarantees a non-zero result [T] only for content.
 /// * Explicitly guarantees only 3 states: loading, content, error.
 sealed class UnionState<T> {
   T? get data;
