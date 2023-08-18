@@ -1,0 +1,23 @@
+name: example
+description: A new Flutter project.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  elementary: 2.0.0
+  flutter:
+    sdk: flutter
+  union_state:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  surf_lint_rules: 3.0.0
+
+flutter:
+  uses-material-design: true

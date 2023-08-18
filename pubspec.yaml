@@ -5,16 +5,16 @@ homepage: https://github.com/surfstudio/flutter-union-state
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
-  flutter: ">=1.17.0"
+  flutter: ">=3.0.0"
 
 dependencies:
-  elementary: 2.0.0
   flutter:
     sdk: flutter
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  mocktail: 0.3.0
   surf_lint_rules: 3.0.0
 
 flutter:
