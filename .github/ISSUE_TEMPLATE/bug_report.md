@@ -1,13 +1,13 @@
 ---
 name: Bug report
-about: Something is wrong with union state.
+about: Something is wrong.
 title: "[BUG] "
 labels: bug
 ---
-
-## Specify package name
-<!--Write the name of the package where you have problems-->
-
+<!--
+    Thank you for contributing to our project!
+    This template is only for bugfix reports, otherwise please use another template.
+-->
 ## Expected behavior
 <!--Tell us what should happen-->
 
@@ -55,4 +55,4 @@ What did you try to solve the problem?
 - [ ] Added isolated way to reproduce the bug.
 - [ ] Specified Flutter, Dart version and platforms.
 - [ ] Attached error code and logs.
-- [ ] All unspecified fields in the Issue description deleted.
+- [ ] All unspecified fields in the Issue description are deleted.
