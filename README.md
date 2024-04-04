@@ -9,7 +9,7 @@
 A simple union with three states (loading, data, and error) based on sealed classes and ChangeNotifier. 
 Used for delivering data to the UI layer, for example, using the [Elementary library](https://pub.dev/packages/elementary).
 
-## Description
+## Overview
 
 The package includes the following classes:
 
