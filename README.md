@@ -6,11 +6,10 @@
 [![Pub popularity](https://badgen.net/pub/popularity/union_state)](https://pub.dev/packages/union_state/score)
 ![Flutter Platform](https://badgen.net/pub/flutter-platform/union_state)
 
+## Overview
+
 A simple union with three states (loading, data, and error) based on sealed classes and ChangeNotifier. 
 Used for delivering data to the UI layer, for example, using the [Elementary library](https://pub.dev/packages/elementary).
-
-## Description
-
 The package includes the following classes:
 
 ### UnionState
