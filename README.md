@@ -1,4 +1,5 @@
-# UnionState
+# Union State
+
 [![Build Status](https://shields.io/github/actions/workflow/status/surfstudio/flutter-union-state/main.yml?logo=github&logoColor=white)](https://github.com/surfstudio/flutter-union-state)
 [![Coverage Status](https://img.shields.io/codecov/c/github/surfstudio/flutter-union-state?logo=codecov&logoColor=white)](https://codecov.io/gh/surfstudio/flutter-union-state)
 [![Pub Version](https://img.shields.io/pub/v/union_state?logo=dart&logoColor=white)](https://pub.dev/packages/union_state)
@@ -8,16 +9,18 @@
 
 ## Overview
 
-A simple union with three states (loading, data, and error) based on sealed classes and ChangeNotifier. 
+A simple union with three states (loading, data, and error) based on sealed classes and ChangeNotifier.
 Used for delivering data to the UI layer, for example, using the [Elementary library](https://pub.dev/packages/elementary).
 The package includes the following classes:
 
 ### UnionState
+
 A universal model for mapping basic UI states.
 
 Can be used as internal replacement for [EntityState]. Unlike [EntityState]:
- * Guarantees a non-zero result [T].
- * Explicitly guarantees only 3 states: loading, content, error.
+
+* Guarantees a non-zero result [T].
+* Explicitly guarantees only 3 states: loading, content, error.
 
 ```dart
 final _countryListState = UnionStateNotifier<Iterable<Country>>.loading();
@@ -90,13 +93,14 @@ Widget build(IExampleWM wm) {
 A custom [ValueNotifier] that encapsulates the state of a union type. It provides methods
  to manage different states of data:
 
-- [content]: Represents a state with successful content.
-- [failure]: Represents a state with an error and, optionally, previous data.
-- [loading]: Represents a state indicating that data is being loaded.
+-[content]: Represents a state with successful content.
+-[failure]: Represents a state with an error and, optionally, previous data.
+-[loading]: Represents a state indicating that data is being loaded.
 
 Can be used as internal replacement for [EntityStateNotifier]. Unlike [EntityState]:
- * Guarantees a non-zero result [T].
- * Explicitly guarantees only 3 states: loading, content, failure.
+
+* Guarantees a non-zero result [T].
+* Explicitly guarantees only 3 states: loading, content, failure.
 
 ```dart
 class ExampleModel extends ElementaryModel {
