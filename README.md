@@ -3,7 +3,7 @@
 [![Surf](./assets/logo_white.png#gh-dark-mode-only)](https://surf.dev#gh-dark-mode-only)
 [![Surf](./assets/logo_black.png#gh-light-mode-only)](https://surf.dev#gh-light-mode-only)
 
-Made by [Surf 🏄‍♂️🏄‍♂️🏄‍♂️](https://surf.dev/)
+Made by [Surf 🏄‍♂️🏄‍♂️🏄‍♂️](https://surf.dev)
 
 [![Build Status](https://shields.io/github/actions/workflow/status/surfstudio/flutter-union-state/on_pull_request.yml?logo=github&logoColor=white)](https://github.com/surfstudio/flutter-union-state)
 [![Coverage Status](https://img.shields.io/codecov/c/github/surfstudio/flutter-union-state?logo=codecov&logoColor=white)](https://codecov.io/gh/surfstudio/flutter-union-state)
