@@ -6,7 +6,7 @@
 Made by [Surf 🏄‍♂️🏄‍♂️🏄‍♂️](https://surf.dev/)
 
 [![Build Status](https://shields.io/github/actions/workflow/status/surfstudio/flutter-union-state/on_pull_request.yml?logo=github&logoColor=white)](https://github.com/surfstudio/flutter-union-state)
-[![Coverage Status](https://img.shields.io/codecov/c/github/surfstudio/flutter-union-state?logo=codecov&logoColor=white)](https://codecov.io/gh/surfstudio/flutter-union-state)
+[![Coverage Status](https://img.shields.io/codecov/c/github/surfstudio/flutter-union-state?logo=codecov&logoColor=white)](https://app.codecov.io/gh/surfstudio/flutter-union-state)
 [![Pub Version](https://img.shields.io/pub/v/union_state?logo=dart&logoColor=white)](https://pub.dev/packages/union_state)
 [![Pub Likes](https://badgen.net/pub/likes/union_state)](https://pub.dev/packages/union_state)
 [![Pub popularity](https://badgen.net/pub/popularity/union_state)](https://pub.dev/packages/union_state/score)
